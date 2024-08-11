@@ -10,5 +10,18 @@ function getComputerChoice() {
     }
 }
 
+function getHumanChoice() {
+    let playerChoice = prompt("What are you playing? ROCK, PAPER or SCISSORS?");
 
-console.log(getComputerChoice());
+    if (playerChoice.toLowerCase() === "rock") {
+        return "rock";
+    } else if (playerChoice.toLowerCase() === "paper") {
+        return "paper";
+    } else if (playerChoice.toLowerCase() === "scissors") {
+        return "scissors";
+    } else {
+        return "invalid answer";
+    }
+
+}
+
