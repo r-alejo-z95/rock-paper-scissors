@@ -19,13 +19,13 @@ function getHumanChoice() {
     while (true) {
         playerChoice = prompt("What are you playing? ROCK, PAPER or SCISSORS?");
 
-        if (playerChoice === "rock") {
+        if (playerChoice.trim().toLowerCase() === "rock") {
             console.log("You have chosen ROCK");
             return "rock";
-        } else if (playerChoice === "paper") {
+        } else if (playerChoice.trim().toLowerCase() === "paper") {
             console.log("You have chosen PAPER");
             return "paper";
-        } else if (playerChoice === "scissors") {
+        } else if (playerChoice.trim().toLowerCase() === "scissors") {
             console.log("You have chosen SCISSORS");
             return "scissors";
         } else {
