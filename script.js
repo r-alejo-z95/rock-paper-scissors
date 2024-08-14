@@ -2,11 +2,11 @@ function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
     if (randomNumber === 0) {
-        return "rock";
+        console.log("Computer chooses ROCK");
     } else if (randomNumber === 1) {
-        return "paper";
+        console.log("Computer chooses PAPER");
     } else {
-        return "scissors";
+        console.log("Computer chooses SCISSORS");
     }
 }
 
@@ -14,40 +14,54 @@ function getHumanChoice() {
     let playerChoice = prompt("What are you playing? ROCK, PAPER or SCISSORS?");
 
     if (playerChoice.toLowerCase() === "rock") {
-        return "rock";
+        console.log("You have chosen ROCK");
     } else if (playerChoice.toLowerCase() === "paper") {
-        return "paper";
+        console.log("You have chosen PAPER");
     } else if (playerChoice.toLowerCase() === "scissors") {
-        return "scissors";
+        console.log("You have chosen SCISSORS");
     } else {
-        return "invalid answer";
+        console.log("That's NOT an option");
     }
+}
+
+function playRound() {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+
+    if (humanSelection === "rock" && computerSelection === "rock") {
+        console.log("It's a DRAW!");
+        console.log("----------");
+    } else if (humanSelection === "rock" && computerSelection === "paper") {
+        console.log("COMPUTER wins!");
+        console.log("----------");
+    } else if (humanSelection === "rock" && computerSelection === "scissors") {
+        console.log("PLAYER wins!");
+        console.log("----------");
+    } else if (humanSelection === "paper" && computerSelection === "rock") {
+        console.log("PLAYER wins!");
+        console.log("----------");
+    } else if (humanSelection === "paper" && computerSelection === "paper") {
+        console.log("It's a DRAW!");
+        console.log("----------");
+    } else if (humanSelection === "paper" && computerSelection === "scissors") {
+        console.log("COMPUTER wins!");
+        console.log("----------");
+    } else if (humanSelection === "scissors" && computerSelection === "rock") {
+        console.log("COMPUTER wins!");
+        console.log("----------");
+    } else if (humanSelection === "scissors" && computerSelection === "paper") {
+        console.log("PLAYER wins!");
+        console.log("----------");
+    } else {
+        console.log("It's a DRAW!");
+        console.log("----------");
+  }
 }
 
 let humanScore = 0;
 let computerScore = 0;
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
+console.log("Let's begin!");
+console.log("----------");
+playRound();
 
-function playRound(humanSelection, computerSelection) {
-    if (humanSelection === "rock" && computerSelection === "rock") {
-        return "Draw!";
-    } else if (humanSelection === "rock" && computerSelection === "paper") {
-        return "Computer wins!";
-    } else if (humanSelection === "rock" && computerSelection === "scissors") {
-        return "Player wins!";
-    } else if (humanSelection === "paper" && computerSelection === "rock") {
-        return "Player wins!";
-    } else if (humanSelection === "paper" && computerSelection === "paper") {
-        return "Draw!";
-    } else if (humanSelection === "paper" && computerSelection === "scissors") {
-        return "Computer wins!";
-    } else if (humanSelection === "scissors" && computerSelection === "rock") {
-        return "Computer wins!";
-    } else if (humanSelection === "scissors" && computerSelection === "paper") {
-        return "Player wins!";
-    } else (humanSelection === "scissors" && computerSelection === "scissors") {
-        return "Draw!";
-  }
-}
     
