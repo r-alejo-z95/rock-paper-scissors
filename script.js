@@ -46,7 +46,7 @@ function playRound(humanSelection, computerSelection) {
         return "Computer wins!";
     } else if (humanSelection === "scissors" && computerSelection === "paper") {
         return "Player wins!";
-    } else if (humanSelection === "scissors" && computerSelection === "scissors") {
+    } else (humanSelection === "scissors" && computerSelection === "scissors") {
         return "Draw!";
   }
 }
