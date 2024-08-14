@@ -3,24 +3,38 @@ function getComputerChoice() {
 
     if (randomNumber === 0) {
         console.log("Computer chooses ROCK");
+        return "rock";
     } else if (randomNumber === 1) {
         console.log("Computer chooses PAPER");
+        return "paper";
     } else {
         console.log("Computer chooses SCISSORS");
+        return "scissors";
     }
 }
 
 function getHumanChoice() {
-    let playerChoice = prompt("What are you playing? ROCK, PAPER or SCISSORS?");
+    let playerChoice;
 
-    if (playerChoice.toLowerCase() === "rock") {
-        console.log("You have chosen ROCK");
-    } else if (playerChoice.toLowerCase() === "paper") {
-        console.log("You have chosen PAPER");
-    } else if (playerChoice.toLowerCase() === "scissors") {
-        console.log("You have chosen SCISSORS");
-    } else {
-        console.log("That's NOT an option");
+    while (true) {
+        playerChoice = prompt("What are you playing? ROCK, PAPER or SCISSORS?");
+
+        if (playerChoice === "rock") {
+            console.log("You have chosen ROCK");
+            return "rock";
+            break;
+        } else if (playerChoice === "paper") {
+            console.log("You have chosen PAPER");
+            return "paper";
+            break;
+        } else if (playerChoice === "scissors") {
+            console.log("You have chosen SCISSORS");
+            return "scissors";
+            break;
+        } else {
+            console.log("That's NOT an option. Try again");
+            console.log("----------");
+        }
     }
 }
 
@@ -58,10 +72,16 @@ function playRound() {
   }
 }
 
+
+
 let humanScore = 0;
 let computerScore = 0;
+
 console.log("Let's begin!");
 console.log("----------");
-playRound();
+
+setTimeout(function() {
+    playRound();
+}, 3000);
 
     
