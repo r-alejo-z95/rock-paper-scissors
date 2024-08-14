@@ -71,4 +71,4 @@ console.log("----------");
 
 setTimeout(function() {
     playGame();
-}, 1000);
+}, 10000);
