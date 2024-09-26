@@ -1,17 +1,7 @@
-function getComputerChoice() {
-    const randomNumber = Math.floor(Math.random() * 3);
-
-    if (randomNumber === 0) {
-        console.log("Computer chooses ROCK");
-        return "rock";
-    } else if (randomNumber === 1) {
-        console.log("Computer chooses PAPER");
-        return "paper";
-    } else {
-        console.log("Computer chooses SCISSORS");
-        return "scissors";
-    }
-}
+const playerDisplay = document.querySelector("#playerDisplay");
+const computerDisplay = document.querySelector("#computerDisplay");
+const roundDisplay = document.querySelector("#roundDisplay");
+const gameDisplay = document.querySelector("#gameDisplay");
 
 function getHumanChoice() {
     let playerChoice;
@@ -32,6 +22,21 @@ function getHumanChoice() {
             console.log("That's NOT an option. Try again");
             console.log("----------");
         }
+    }
+}
+
+function getComputerChoice() {
+    const randomNumber = Math.floor(Math.random() * 3);
+
+    if (randomNumber === 0) {
+        console.log("Computer chooses ROCK");
+        return "rock";
+    } else if (randomNumber === 1) {
+        console.log("Computer chooses PAPER");
+        return "paper";
+    } else {
+        console.log("Computer chooses SCISSORS");
+        return "scissors";
     }
 }
 
