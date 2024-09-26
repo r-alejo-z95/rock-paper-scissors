@@ -10,7 +10,8 @@ function playGame(playerChoice) {
 
     function playRound() {
 
-        let computerChoice = (Math.floor(Math.random() * 3));
+        let computerChoice = choices[Math.floor(Math.random() * 3)];
+        console.log(computerChoice);
     
         if (playerChoice === "rock" && computerChoice === "scissors" ||
             playerChoice === "paper" && computerChoice === "rock" ||
