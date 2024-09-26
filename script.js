@@ -24,7 +24,6 @@ function playGame(playerChoice) {
     roundDisplay.textContent = `Player: ${humanScore} - Computer: ${computerScore}`;
 }
 
-playGame();
 
 
 
