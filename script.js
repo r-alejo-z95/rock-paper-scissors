@@ -24,9 +24,8 @@ function playGame(playerChoice) {
     roundDisplay.textContent = `Player: ${humanScore} - Computer: ${computerScore}`;
 }
 
-// for (let i = 0; i < 5; i++) {
-    playGame();
-// }
+playGame();
+
 
 
 
