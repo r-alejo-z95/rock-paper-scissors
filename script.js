@@ -66,9 +66,5 @@ function playGame() {
     alert(`Final Score: Player - ${humanScore}, Computer - ${computerScore}`);
 }
 
-console.log("Let's begin!");
-console.log("----------");
+playGame();
 
-setTimeout(function() {
-    playGame();
-}, 10000);

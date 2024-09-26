@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, paper, scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Rock, Paper, Scissors</h1>
-        <h2>You have 10 seconds to open your Console!!</h2>
-            <h3>Open the Console to play</h3>
-            <h3>Press F12 or right-click -> inspect element -> console</h3>
-            <h3>Wait until the 10 seconds are up to start playing</h3>
+    
+        <div class="humanChoices">
+            <button onclick="getHumanChoice('rock')">🪨</button>
+            <button onclick="getHumanChoice('paper')">🧻</button>
+            <button onclick="getHumanChoice('scissors')">✂️</button>
+        </div>
+
+        <div id="playerDisplay">You chose: </div>
+        <div id="computerDisplay">Computer chooses: </div>
+        <div id="roundDisplay"></div>
+        <div id="gameDisplay">Game Over: </div>
+
     <script src="script.js"></script>    
 </body>
 </html>
