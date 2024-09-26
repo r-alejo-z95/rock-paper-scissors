@@ -1,5 +1,6 @@
 const playerDisplay = document.querySelector("#playerDisplay");
 const computerDisplay = document.querySelector("#computerDisplay");
+const scoreDisplay = document.querySelector("#scoreDisplay");
 const roundDisplay = document.querySelector("#roundDisplay");
 const gameDisplay = document.querySelector("#gameDisplay");
 const choices = ["rock", "paper", "scissors"];
@@ -14,14 +15,16 @@ function playGame(playerChoice) {
         playerChoice === "paper" && computerChoice === "rock" ||
         playerChoice === "scissors" && computerChoice === "paper") {
         humanScore++;
-
+        roundDisplay.textContent = "You WIN!"
     } else if (playerChoice === computerChoice) {
+        roundDisplay.textContent = "It's a DRAW!"
     } else {
         computerScore++;
+        roundDisplay.textContent = "Computer WINS!"
     }
     playerDisplay.textContent = `You chose: ${playerChoice}`;
     computerDisplay.textContent = `Computer chooses: ${computerChoice}`;
-    roundDisplay.textContent = `Player: ${humanScore} - Computer: ${computerScore}`;
+    scoreDisplay.textContent = `Player: ${humanScore} - Computer: ${computerScore}`;
 }
 
 
