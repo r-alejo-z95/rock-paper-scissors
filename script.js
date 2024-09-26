@@ -34,6 +34,7 @@ function gameOver() {
     gameDisplay.textContent = "Game Over";
     humanScore = 0;
     computerScore = 0;
+    scoreDisplay.textContent = "";
     const restartBtn = document.createElement("button");
     restartBtn.textContent = "Play Again";
     restartBtn.addEventListener("click", restartGame);
@@ -47,6 +48,7 @@ function restartGame() {
     gameDisplay.textContent = "";
 }
 
-
+//TODO anadir al game over quien gano, cambiar los mensajes de quien gana cada
+//ronda por "Tu ganas ESTA RONDA"
 
 
