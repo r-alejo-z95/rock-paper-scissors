@@ -15,16 +15,11 @@ function playGame(playerChoice) {
         if (playerChoice === "rock" && computerChoice === "scissors" ||
             playerChoice === "paper" && computerChoice === "rock" ||
             playerChoice === "scissors" && computerChoice === "paper") {
-            console.log("PLAYER wins this round!");
             humanScore++;
         } else if (playerChoice === computerChoice) {
-            console.log("It's a DRAW!");
         } else {
-            console.log("COMPUTER wins this round!");
             computerScore++;
         }
-        console.log(`Score: Player - ${humanScore}, Computer - ${computerScore}`);
-        console.log("----------");
     }
 
     // for (let i = 0; i < 5; i++) {
