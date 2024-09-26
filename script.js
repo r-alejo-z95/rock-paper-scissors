@@ -3,28 +3,6 @@ const computerDisplay = document.querySelector("#computerDisplay");
 const roundDisplay = document.querySelector("#roundDisplay");
 const gameDisplay = document.querySelector("#gameDisplay");
 
-function getHumanChoice() {
-    let playerChoice;
-
-    while (true) {
-        playerChoice = prompt("What are you playing? ROCK, PAPER or SCISSORS?");
-
-        if (playerChoice.trim().toLowerCase() === "rock") {
-            console.log("You have chosen ROCK");
-            return "rock";
-        } else if (playerChoice.trim().toLowerCase() === "paper") {
-            console.log("You have chosen PAPER");
-            return "paper";
-        } else if (playerChoice.trim().toLowerCase() === "scissors") {
-            console.log("You have chosen SCISSORS");
-            return "scissors";
-        } else {
-            console.log("That's NOT an option. Try again");
-            console.log("----------");
-        }
-    }
-}
-
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -40,7 +18,7 @@ function getComputerChoice() {
     }
 }
 
-function playGame() {
+function playGame(playerChoice) {
     let humanScore = 0;
     let computerScore = 0;
 
@@ -66,9 +44,6 @@ function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound();
     }
-
-    console.log("GAME OVER");
-    alert(`Final Score: Player - ${humanScore}, Computer - ${computerScore}`);
 }
 
 playGame();
