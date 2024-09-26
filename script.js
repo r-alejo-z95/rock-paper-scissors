@@ -2,36 +2,22 @@ const playerDisplay = document.querySelector("#playerDisplay");
 const computerDisplay = document.querySelector("#computerDisplay");
 const roundDisplay = document.querySelector("#roundDisplay");
 const gameDisplay = document.querySelector("#gameDisplay");
-
-function getComputerChoice() {
-    const randomNumber = Math.floor(Math.random() * 3);
-
-    if (randomNumber === 0) {
-        console.log("Computer chooses ROCK");
-        return "rock";
-    } else if (randomNumber === 1) {
-        console.log("Computer chooses PAPER");
-        return "paper";
-    } else {
-        console.log("Computer chooses SCISSORS");
-        return "scissors";
-    }
-}
+const choices = ["rock", "paper", "scissors"];
 
 function playGame(playerChoice) {
     let humanScore = 0;
     let computerScore = 0;
 
     function playRound() {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
+
+        let computerChoice = (Math.floor(Math.random() * 3));
     
-        if (humanSelection === "rock" && computerSelection === "scissors" ||
-            humanSelection === "paper" && computerSelection === "rock" ||
-            humanSelection === "scissors" && computerSelection === "paper") {
+        if (playerChoice === "rock" && computerChoice === "scissors" ||
+            playerChoice === "paper" && computerChoice === "rock" ||
+            playerChoice === "scissors" && computerChoice === "paper") {
             console.log("PLAYER wins this round!");
             humanScore++;
-        } else if (humanSelection === computerSelection) {
+        } else if (playerChoice === computerChoice) {
             console.log("It's a DRAW!");
         } else {
             console.log("COMPUTER wins this round!");
@@ -41,9 +27,9 @@ function playGame(playerChoice) {
         console.log("----------");
     }
 
-    for (let i = 0; i < 5; i++) {
+    // for (let i = 0; i < 5; i++) {
         playRound();
-    }
+    // }
 }
 
 playGame();
