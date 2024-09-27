@@ -2,17 +2,23 @@ body {
     font-family: "JetBrains Mono",monospace;
     font-weight: bold;
     margin: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     color: #FCFCFD;
     background-color: #8f99ff;
+    padding: 10px;
 }
 
 .humanChoices {
     margin-bottom: 30px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -26,6 +32,36 @@ p {
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 4rem;
+        min-width: 80px;
+    }
+
+    .displays {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 3rem;
+        min-width: 60px;
+    }
+
+    .displays {
+        font-size: 0.8rem;
+    }
 }
 
 .btn {
@@ -48,6 +84,8 @@ p {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    text-align: center;
+    
 }
 
 #gameDisplay {
@@ -100,3 +138,4 @@ p {
     transform: none;
     cursor: default;
 }
+
