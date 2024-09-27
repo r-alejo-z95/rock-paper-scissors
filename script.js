@@ -37,13 +37,17 @@ function gameOver() {
     } else {
         gameDisplay.textContent = "GAME OVER"
     }
+
     humanScore = 0;
     computerScore = 0;
     scoreDisplay.textContent = "";
+
     const restartBtn = document.createElement("button");
     restartBtn.textContent = "Play Again";
     restartBtn.addEventListener("click", restartGame);
+    restartBtn.id = "restartBtn";
     displays.appendChild(restartBtn);
+
     const buttons = document.querySelectorAll(".btn");
     buttons.forEach(button => {
         button.disabled = true;
@@ -55,6 +59,10 @@ function restartGame() {
     computerDisplay.textContent = "Computer is waiting";
     roundDisplay.textContent = "";
     gameDisplay.textContent = "";
+
+    const restartBtn = document.querySelector("#restartBtn");
+    restartBtn.remove();
+
     const buttons = document.querySelectorAll(".btn");
     buttons.forEach(button => {
         button.disabled = false;
