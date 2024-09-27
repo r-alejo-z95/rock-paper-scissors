@@ -13,6 +13,9 @@ body {
     flex-direction: row;
 }
 
+h1 {
+    font-size: 3rem;
+}
 
 .btn {
     font-size: 7rem;

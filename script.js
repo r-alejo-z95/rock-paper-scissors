@@ -3,6 +3,7 @@ const computerDisplay = document.querySelector("#computerDisplay");
 const scoreDisplay = document.querySelector("#scoreDisplay");
 const roundDisplay = document.querySelector("#roundDisplay");
 const gameDisplay = document.querySelector("#gameDisplay");
+const displays = document.querySelector(".displays");
 const choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
@@ -42,7 +43,7 @@ function gameOver() {
     const restartBtn = document.createElement("button");
     restartBtn.textContent = "Play Again";
     restartBtn.addEventListener("click", restartGame);
-    gameDisplay.appendChild(restartBtn);
+    displays.appendChild(restartBtn);
     const buttons = document.querySelectorAll(".btn");
     buttons.forEach(button => {
         button.disabled = true;
