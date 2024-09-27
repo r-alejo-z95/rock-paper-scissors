@@ -15,12 +15,12 @@ function playGame(playerChoice) {
             playerChoice === "paper" && computerChoice === "rock" ||
             playerChoice === "scissors" && computerChoice === "paper") {
             humanScore++;
-            roundDisplay.textContent = "You WIN!"
+            roundDisplay.textContent = "You WIN this round!"
         } else if (playerChoice === computerChoice) {
             roundDisplay.textContent = "It's a DRAW!"
         } else {
             computerScore++;
-            roundDisplay.textContent = "Computer WINS!"
+            roundDisplay.textContent = "Computer WINS this round!"
         }
         playerDisplay.textContent = `You chose: ${playerChoice}`;
         computerDisplay.textContent = `Computer chooses: ${computerChoice}`;
@@ -31,7 +31,11 @@ function playGame(playerChoice) {
     }
 }
 function gameOver() {
-    gameDisplay.textContent = "Game Over";
+    if (humanScore > computerScore) {
+        gameDisplay.textContent = "You are a WINNER!";
+    } else {
+        gameDisplay.textContent = "GAME OVER"
+    }
     humanScore = 0;
     computerScore = 0;
     scoreDisplay.textContent = "";
@@ -39,16 +43,22 @@ function gameOver() {
     restartBtn.textContent = "Play Again";
     restartBtn.addEventListener("click", restartGame);
     gameDisplay.appendChild(restartBtn);
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
 }
 
 function restartGame() {
-    playerDisplay.textContent = "You chose: ";
-    computerDisplay.textContent = "Computer chooses: ";
+    playerDisplay.textContent = "Click on your choice";
+    computerDisplay.textContent = "Computer is waiting";
     roundDisplay.textContent = "";
     gameDisplay.textContent = "";
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(button => {
+        button.disabled = false;
+    });
 }
 
-//TODO anadir al game over quien gano, cambiar los mensajes de quien gana cada
-//ronda por "Tu ganas ESTA RONDA"
 
 
