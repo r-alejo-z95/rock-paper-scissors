@@ -50,7 +50,7 @@ function gameOver() {
 
     const buttons = document.querySelectorAll(".btn");
     buttons.forEach(button => {
-        button.setAttribute('disabled', 'true');
+        button.disabled = true;
     });
 }
 
@@ -65,7 +65,7 @@ function restartGame() {
 
     const buttons = document.querySelectorAll(".btn");
     buttons.forEach(button => {
-        button.setAttribute('disabled', 'false');
+        button.disabled = false;
     });
 }
 
